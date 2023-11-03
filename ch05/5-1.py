@@ -18,3 +18,5 @@ elif score >= 60:
     print("D0")
 else:
     print("F")
+
+print("학점입니다. ^^")

@@ -1,6 +1,6 @@
 ## 함수 선언 부분 ##
 def func1():
-    global a 
+    global a        ## 지역 변수가 아닌 전역 변수로 사용할려면 -> global
     a = 10
     print('func1()에서 a값 %d' % a)
 

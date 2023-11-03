@@ -21,7 +21,6 @@ while True:
     turtle.goto(x, y)
     turtle.pendown()
     turtle.color(color)
-    turtle.stamp()
 
     for i in range(5):
         turtle.forward(side_length)

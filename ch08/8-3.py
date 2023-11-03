@@ -2,7 +2,7 @@ ss = input("입력 문자열 ==> ")
 print("출력 문자열 ==> ", end='')
 
 if ss.startswith('(') == False:
-    print("(", end='0')
+    print("(", end='')
 
 print(ss, end='')
 

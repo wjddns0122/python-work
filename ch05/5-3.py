@@ -1,4 +1,4 @@
-num = int(input("숫자를 입력하세요: "))
+num = int(input("*** 숫자를 입력하세요: "))
 
 if num <= 1:
     print(num, "는(은) 소수가 아닙니다.")
@@ -11,6 +11,6 @@ else:
             break
 
     if is_prime:
-        print(num, "는(은) 소수입니다.")
+        print(num, "는 소수입니다.")
     else:
-        print(num, "는(은) 소수가 아닙니다.")
+        print(num, "는 소수가 아닙니다.")
