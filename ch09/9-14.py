@@ -1,6 +1,8 @@
 from myTurtle import *
 import turtle
 
+from ch09.myTurtle import *
+
 ## 전역 변수 선언 부분 ##
 inStr = ''
 swidth, sheight = 300, 300

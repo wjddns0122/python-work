@@ -1,4 +1,5 @@
-ss = '파이썬은완전재미있어요'
+ss = '파이썬짱!'
 
-for char in ss:
-    print(char + '#', end='')
+sslen = len(ss)
+for i in range(0, sslen):
+    print(ss[i] + '$', end='')
