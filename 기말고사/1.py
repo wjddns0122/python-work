@@ -1,6 +1,7 @@
 from tkinter import *
 import math
 import random
+import tkinter
 
 class Shape:
     color, width = '', 0
@@ -101,19 +102,22 @@ window = None
 canvas = None
 x1, y1, x2, y2 = None, None, None, None
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     window = Tk()
     window.title("객체지향 그림판")
-    canvas = Canvas(window, height = 300, width = 300)
+    canvas = Canvas(window, height=300, width=300)
     canvas.bind("<Button-1>", startDrawRect)
     canvas.bind("<ButtonRelease-1>", endDrawRect)
     canvas.bind("<Button-3>", startDrawCircle)
     canvas.bind("<ButtonRelease-3>", endDrawCircle)
-    canvas.bind("<Double-Button-1>",deleteCirShape)
-    canvas.bind("<Double-Button-2>",deleteRectShape)
+    canvas.bind("<Double-Button-1>", deleteCirShape)
+    canvas.bind("<Double-Button-2>", deleteRectShape)
 
     canvas.pack()
-    window.mainloop()
     window.geometry("600x800")
-    if canvas != None:
-        canvas.destroy()
+    window.mainloop()
+
+    try:
+        window.destroy()
+    except tkinter.TclError:
+        pass

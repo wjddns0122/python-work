@@ -68,28 +68,71 @@ def func_zoomout():
     displayImage(photo, newX, newY)
 
 def func_mirror1():
-    pass
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.transpose(Image.FLIP_TOP_BOTTOM)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_mirror2():
-    pass
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.transpose(Image.FLIP_LEFT_RIGHT)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_rotate():
-    pass
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    degree = askinteger("회전", "회전할 각도를 선택하세요", minvalue=0, maxvalue=360)
+    photo2 = photo.copy()
+    photo2 = photo.rotate(degree, expand= True)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)    
 
 def func_bright():
-    pass 
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    value = askfloat("밝게", "값을 입력하세요(1.0 ~ 10.0)", minvalue= 1.0, maxvalue= 10.0)
+    photo2 = photo.copy()
+    photo2 = ImageEnhance.Brightness(photo2).enhance(value)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_dark():
-    pass 
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    value = askfloat("어둡게", "값을 입력하세요(0.0 ~ 1.0)", minvalue= 0.0, maxvalue= 1.0)
+    photo2 = photo.copy()
+    photo2 = ImageEnhance.Brightness(photo2).enhance(value)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_blur():
-    pass 
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.filter(ImageFilter.BLUR)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_embo():
-    pass
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.filter(ImageFilter.EMBOSS)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 def func_bw():
-    pass 
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = ImageOps.grayscale(photo2)
+    newX = photo2.width
+    newY = photo2.height
+    displayImage(photo2, newX, newY)
 
 ## 전역 변수 선언 부분 ##
 window, canvas, paper = None, None, None
